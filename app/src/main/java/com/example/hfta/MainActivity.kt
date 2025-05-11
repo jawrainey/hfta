@@ -15,7 +15,7 @@ import com.example.hfta.ui.theme.HFTATheme
 
 
 fun tokenize(context: Context) {
-    val bytes = context.assets.open("gemma.json").use { it.readBytes() }
+    val bytes = context.assets.open(BuildConfig.SELECTED_TOKENIZER).use { it.readBytes() }
     val tokenizer = HFTokenizer(bytes)
 
     val sentences = listOf("Hello world", "hello world", "hello jặy")

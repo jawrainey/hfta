@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+// NOTE: change these as desired ...
+var selectedTokenizer = "gemma.json"
 
 android {
     namespace = "com.example.hfta"
@@ -20,7 +22,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "SELECTED_TOKENIZER", "\"${selectedTokenizer}\"")
+        }
         release {
+            buildConfigField("String", "SELECTED_TOKENIZER", "\"${selectedTokenizer}\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -36,6 +42,7 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }

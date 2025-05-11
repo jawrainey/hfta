@@ -18,7 +18,7 @@ class HFTokenizerTest(
     @Before
     fun setUp() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
-        tokenizer = HFTokenizer(context.assets.open("gemma.json").use { it.readBytes() })
+        tokenizer = HFTokenizer(context.assets.open(BuildConfig.SELECTED_TOKENIZER).use { it.readBytes() })
     }
 
     @After
