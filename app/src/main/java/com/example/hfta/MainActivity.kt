@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -16,7 +18,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import com.example.hfta.ui.theme.HFTATheme
@@ -61,6 +65,15 @@ fun TextToTokens(tokenizer: HFTokenizer, modifier: Modifier) {
             },
             modifier = Modifier.fillMaxWidth()
         )
-        Text(text = "token ids: $output", modifier = Modifier.padding(10.dp))
+        Text(text = "$output", modifier = Modifier.padding(10.dp))
+        Box(modifier = Modifier
+            .fillMaxSize()
+            .fillMaxHeight(1f)) {
+            Text(
+                text = BuildConfig.SELECTED_TOKENIZER,
+                fontWeight = FontWeight.Bold,
+                modifier = modifier.align(Alignment.BottomCenter)
+            )
+        }
     }
 }
