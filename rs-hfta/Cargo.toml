@@ -1,0 +1,16 @@
+[package]
+authors = ["Jay Rainey <jay@jawrainey.me>"]
+name = "hfta"
+version = "1.0.0"
+edition = "2024"
+description = "Reference implementation using HuggingFace's tokenizers in Android"
+keywords = ["tokenizer", "NLP", "huggingface", "Android"]
+readme = "./README.md"
+
+[dependencies]
+tokenizers = { version = "0.21.1", default-features = false, features = ["onig"] }
+jni = { version = "0.21.1" }
+
+[lib]
+name = "hfta"
+crate-type = ["cdylib"]
