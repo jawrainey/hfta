@@ -7,17 +7,8 @@ class HFTokenizer(tokenizerBytes: ByteArray) {
 
     private var tokenizerPtr: Long = createTokenizer(tokenizerBytes)
 
-    companion object {
-        init {
-            System.loadLibrary("hfta")
-        }
-    }
+    companion object { init { System.loadLibrary("hfta") } }
 
-    fun encode(text: String): IntArray {
-        return encode(tokenizerPtr, text)
-    }
-
-    fun tearDown() {
-        return deleteTokenizer(tokenizerPtr)
-    }
+    fun encode(text: String): IntArray = encode(tokenizerPtr, text)
+    fun tearDown() = deleteTokenizer(tokenizerPtr).also { tokenizerPtr = 0L }
 }
