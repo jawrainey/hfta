@@ -61,7 +61,7 @@ fun TextToTokens(tokenizer: HFTokenizer, modifier: Modifier) {
             value = text,
             onValueChange = {
                 text = it
-                output = tokenizer.encode(it.text).toList()
+                output = tokenizer.encode(it.text.lowercase()).toList()
             },
             modifier = Modifier.fillMaxWidth()
         )
