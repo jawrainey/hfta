@@ -14,4 +14,5 @@ Run _any_ HF's tokenizer on Android using the associated `tokenizers.json` from 
 ### Thanks to
 
 - [Hugging Face's `tokenizers` library](https://github.com/huggingface/tokenizers)
+- [Qualcomm's Genie Library](https://softwarecenter.qualcomm.com/api/download/software/sdks/Qualcomm_AI_Runtime_Community/All/2.34.0.250424/v2.34.0.250424.zip) has a rust to C++ static library implementation of HF's tokenizers at `qairt/2.34.0.250424/examples/Genie/Genie/src/qualla/tokenizers/rust`
 - [Shubham Panchal's `Sentence-Embeddings-Android`](https://github.com/shubham0204/Sentence-Embeddings-Android/)
