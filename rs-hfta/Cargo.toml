@@ -14,3 +14,11 @@ jni = { version = "0.21.1" }
 [lib]
 name = "hfta"
 crate-type = ["cdylib"]
+
+[profile.release]
+opt-level = 'z'
+lto = 'fat'
+codegen-units = 1
+panic = 'abort'
+strip = true
+debug = false
