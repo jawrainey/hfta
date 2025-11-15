@@ -10,6 +10,8 @@ This package creates a shared library (`.so`) where tokenizers from HF can be lo
 
 ## Development
 
+Builds automatically in Android via [`rust-android-gradle`](https://github.com/mozilla/rust-android-gradle). For manual builds:
+
 ```bash
 # install rust: https://www.rust-lang.org/tools/install
 
@@ -21,4 +23,6 @@ cargo install cargo-ndk
 rustup target add aarch64-linux-android
 
 cargo ndk -t arm64-v8a -o ../app/src/main/jniLibs/ build --release
+
+# NOTE: app/src/main/jniLibs/arm64-v8a/libhfta.so should be 2.7M
 ```

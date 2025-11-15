@@ -6,12 +6,11 @@ plugins {
 }
 
 // NOTE: change these as desired ...
-var selectedTokenizer = "gemma.json"
-
+var selectedTokenizer = "gemma-3-4b-it.json"
 
 android {
     namespace = "com.example.hfta"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         ndkVersion = "29.0.13113456"
