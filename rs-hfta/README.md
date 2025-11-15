@@ -18,7 +18,7 @@ This package creates a shared library (`.so`) where tokenizers from HF can be lo
 cargo install cargo-ndk
 
 # Depending what you want to target install the toolchain:
-rustup target add armv7-linux-androideabi
+rustup target add aarch64-linux-android
 
 cargo ndk -t arm64-v8a -o ../app/src/main/jniLibs/ build --release
 ```
