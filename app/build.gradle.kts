@@ -1,8 +1,8 @@
 plugins {
-    alias(libs.plugins.rust.plugin)
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.rust.plugin)
 }
 
 // NOTE: change these as desired ...
@@ -47,12 +47,6 @@ android {
     buildFeatures {
         buildConfig = true
         compose = true
-    }
-
-    tasks.whenTaskAdded {
-        if (name in listOf("javaPreCompileDebug", "javaPreCompileRelease")) {
-            dependsOn("cargoBuild")
-        }
     }
 }
 

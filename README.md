@@ -18,7 +18,9 @@ https://github.com/user-attachments/assets/54deb649-49f4-467e-8df9-dd424d3bed41
 
 - Run any [HuggingFace's (HF) tokenizers](https://github.com/huggingface/tokenizers) on-device in Android.
 - [`rust` to `java` NDK bindings of HF's tokenizers in `rs-hfta`](./rs-hfta/README.md)
+- Use of [JNI bindings between rust and Android](https://github.com/jawrainey/hfta/blob/main/app/src/main/java/com/example/hfta/HFTokenizer.kt#L3)
 - [Parameterized instrumentation tests (runs on-device)](./app/src/androidTest/java/com/example/hfta/HFTokenizer.kt)
+- [compiler optimizations to reduce lib filesize](https://github.com/jawrainey/hfta/commit/4cd5cc10a58248827e5c68db62630dc4d8cbdcf5)
 
 ## Implementation Details
 
@@ -29,3 +31,4 @@ Run _any_ HF's tokenizer on Android using the associated `tokenizers.json` from 
 - [Hugging Face's `tokenizers` library](https://github.com/huggingface/tokenizers)
 - [Qualcomm's Genie Library](https://softwarecenter.qualcomm.com/api/download/software/sdks/Qualcomm_AI_Runtime_Community/All/2.34.0.250424/v2.34.0.250424.zip) has a rust to C++ static library implementation of HF's tokenizers at `qairt/2.34.0.250424/examples/Genie/Genie/src/qualla/tokenizers/rust`
 - [Shubham Panchal's `Sentence-Embeddings-Android`](https://github.com/shubham0204/Sentence-Embeddings-Android/)
+- [Rust's `profile` docs](https://doc.rust-lang.org/cargo/reference/profiles.html)
