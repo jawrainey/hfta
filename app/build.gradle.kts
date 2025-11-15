@@ -2,18 +2,20 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.rust.plugin)
 }
 
 // NOTE: change these as desired ...
-var selectedTokenizer = "gemma.json"
+var selectedTokenizer = "gemma-3-4b-it.json"
 
 android {
     namespace = "com.example.hfta"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
+        ndkVersion = "29.0.13113456"
         applicationId = "com.example.hfta"
-        minSdk = 34
+        minSdk = 29
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -45,6 +47,16 @@ android {
         buildConfig = true
         compose = true
     }
+}
+
+cargo {
+    module = "../rs-hfta"
+    libname = "hfta"
+    prebuiltToolchains = true
+    targets = listOf("arm64")
+    profile = "release"
+    targetDirectory = "src/main/jniLibs/"
+    verbose = true
 }
 
 dependencies {

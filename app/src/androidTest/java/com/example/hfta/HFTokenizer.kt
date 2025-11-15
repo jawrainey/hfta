@@ -41,7 +41,7 @@ class HFTokenizerTest(
     }
 
     @Test
-    fun `test tokenization `() {
+    fun test_tokenization() {
         assertEquals(tokenizer.encode(sentence).asList(), tokens)
     }
 }

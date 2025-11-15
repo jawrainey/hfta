@@ -8,7 +8,7 @@ keywords = ["tokenizer", "NLP", "huggingface", "Android"]
 readme = "./README.md"
 
 [dependencies]
-tokenizers = { version = "0.21.1", default-features = false, features = ["onig"] }
+tokenizers = { version = "0.22.1", default-features = false, features = ["onig"] }
 jni = { version = "0.21.1" }
 
 [lib]
