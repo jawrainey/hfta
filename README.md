@@ -4,8 +4,9 @@
 
 ## Demo Video
 
-UI to show text to tokens via the tokenizers library in real-time on Android:
+UI to show text to tokens via the tokenizers library in real-time on Android at [`demo/demo.mp4`](demo/demo.mp4):
 
+https://github.com/user-attachments/assets/54deb649-49f4-467e-8df9-dd424d3bed41
 
 ### Try a Tokenizer
 
